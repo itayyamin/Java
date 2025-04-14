@@ -1,6 +1,10 @@
 // Snake class extends Reptile and implements Animal (also demonstrates both inheritance and interface implementation)
 public class Snake extends Reptile {
 
+    public Snake(){
+        System.out.println("This is Snake constuctor");
+    }
+
     @Override
     public void birth() {
         System.out.println("A snake lays eggs.");

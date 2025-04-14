@@ -1,6 +1,10 @@
 // Mammal class implements Animal (demonstrating inheritance and implementation)
 public class Mammal implements Animal {
 
+    public Mammal(){
+        System.out.println("This is Mammal constuctor");
+    }
+
     // Implementing the abstract birth method from Animal interface
     @Override
     public void birth() {
