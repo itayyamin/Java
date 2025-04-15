@@ -1,4 +1,5 @@
 public class Arrays {
+
     
     public static void main(String[] args) {
         // Example 1: Array Initialization and Traversing
