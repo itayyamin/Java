@@ -1,7 +1,8 @@
 // Dog class extends Mammal and implements Animal (demonstrates both inheritance and interface implementation)
-public class Dog extends Mammal {
+public class Dog extends Mammal implements LandAnimal{
 
     public Dog(){
+        super();
         System.out.println("This is Dog constuctor");
     }
 

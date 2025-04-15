@@ -17,6 +17,11 @@ public class Arrays {
         sumOfArrayElements();
     }
 
+    public static void Basic() {
+        int[] arr = {1, 2, 3, 4, 5};
+        
+    }
+
     /**
      * Example 1: Array Initialization and Traversing
      * 

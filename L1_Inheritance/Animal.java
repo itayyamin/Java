@@ -1,11 +1,11 @@
 // Animal interface with abstract and default methods
-public interface Animal {
+public class Animal {
 
-    // Abstract method (must be implemented by any class that implements Animal)
-    void birth();
+    public Animal() { System.out.println("This is Animal constructor"); }
 
-    // Default method (can be used by classes implementing Animal)
-    default void breath() {
+    void birth() { System.out.println("I give birth to my babies"); }
+
+    void breath() {
         System.out.println("I breathe air");
     }
 }
