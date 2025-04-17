@@ -17,4 +17,8 @@ public class Dog extends Mammal implements LandAnimal{
         super.breath();  // Calling the inherited breath method
         System.out.println("A dog breathes through its nose.");
     }
+
+    public void Walk() {
+        System.out.println("Dog walks on four legs.");
+    }
 }

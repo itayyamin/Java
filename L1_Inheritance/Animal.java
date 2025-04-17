@@ -1,4 +1,3 @@
-// Animal interface with abstract and default methods
 public class Animal {
 
     public Animal() { System.out.println("This is Animal constructor"); }

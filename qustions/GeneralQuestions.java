@@ -1,6 +1,3 @@
-
-
-
 public class q1
 {
     public static class Node {
