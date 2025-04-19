@@ -263,3 +263,35 @@ DONE:
     write
     stop
 
+
+Q5:
+    read            // read initial -1
+    read            // read first bit
+    store b
+    load zero
+    store result
+
+LOOP:
+    load b
+    add one
+    gotoz END       // if b == -1, stop
+
+    // result = result * 2
+    load result
+    add result
+    store result
+
+    // result = result + b
+    load b
+    add result
+    store result
+
+    read
+    store b
+    goto LOOP
+
+END:
+    load result
+    write
+    stop
+
