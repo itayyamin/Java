@@ -28,4 +28,16 @@ public class TextEditor {
 
     // Replace all occurrences of a character with another character
     public void replace(char oldChar, char newChar) {}
+
+    public int size() {
+        return size(First);
+    }
+
+    private int size(TextNode node) {
+        return -1;
+    }
+
+    public static void main(String[] args) {
+
+    }
 }

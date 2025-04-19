@@ -1,0 +1,265 @@
+PRACTICE QUSTIONS
+
+
+
+Q1: Add Two Numbers
+A1:
+    read
+    store x
+    read
+    store y
+
+    load x
+    add y
+    write
+    stop
+
+
+Q2: Write the Bigger Number
+A2:
+    read
+    store x
+    read
+    store y
+
+    load x
+    sub y
+    gotop X_BIGGER
+
+    load y
+    write
+    stop
+
+X_BIGGER:
+    load x
+    write
+    stop
+
+
+
+Q3: Check Equality
+A3:
+    read
+    store x
+    read
+    store y
+
+    load x
+    sub y
+    gotoz EQUAL
+
+    load zero
+    write
+    stop
+
+EQUAL:
+    load one
+    write
+    stop
+
+
+Q4: Count Down from a Number to 1
+A4:
+        read
+        store n
+
+    LOOP:
+        load n
+        gotoz END       // if n == 0, stop
+
+        load n
+        write           // write current n
+
+        load n          // you can't count on D to still be n afterward, especially if other commands (like load, write
+        sub one
+        store n         // n = n - 1
+
+        goto LOOP       // repeat
+
+    END:
+        stop
+
+
+ Q5: sum of first n numbers
+ A5:
+     read
+     store n
+
+     load zero
+     store sum
+
+     load one
+     store i         // i = 1
+
+ LOOP:
+     load n
+     sub i
+     gotop CONTINUE  // if i <= n
+
+     goto DONE       // if i > n
+
+ CONTINUE:
+     load sum
+     add i
+     store sum       // sum += i
+
+     load i
+     add one
+     store i         // i++
+
+     goto LOOP
+
+ DONE:
+     load sum
+     write
+     stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Questions from Tests
+
+Q1:
+    read
+    store x         // Read first number x
+    read
+    store y         // Read second number y
+    load x
+
+LOOP:
+    sub y
+    gotop LOOP
+    gotoz END_ZERO
+    add y
+END_ZERO:
+    write
+    stop
+
+
+Q2:
+
+    read
+    store v         // Store base value v
+    load zero
+    store sum       // Initialize sum = 0
+
+LOOP:
+    read
+    store x         // Read next number x
+    load x
+    sub zero
+    gotoz END       // If x == 0, end
+
+    // Compute x - v
+    load x
+    sub v
+    store diff
+
+    // If diff > 0, use it directly
+    load diff
+    gotop POS
+
+    // Else: negate it to get abs value
+    load zero
+    sub diff
+    store abs
+    goto ADD
+
+POS:
+    load diff
+    store abs
+
+ADD:
+    load sum
+    add abs
+    store sum
+    goto LOOP
+
+END:
+    load sum
+    write
+    stop
+
+
+Q3:
+
+    read
+    store x        // store x
+    read
+    store y        // store y
+
+    load x
+CHECK:
+    sub y
+    store x        // x = x - y
+    load x
+    gotoz MULTIPLE // if x == 0 -> multiple
+    sub y
+    gotop CHECK    // if x - y > 0 → keep subtracting
+
+
+//when condition is false
+NOT_MULTIPLE:
+    load zero
+    write
+    stop
+
+MULTIPLE:
+    load one
+    write
+    stop
+
+
+
+Q4:
+    read
+    store n        // n is the input number
+    load zero
+    store root     // root = 0
+    store odd      // odd = 0
+
+NEXT_ODD:
+    load odd
+    add one
+    add one        // odd += 2
+    store odd
+
+    load n
+    sub odd
+    gotop CONTINUE
+    goto DONE      // if n - odd < 0 → done
+
+CONTINUE:
+    store n        // n = n - odd
+    load root
+    add one
+    store root     // root++
+
+    goto NEXT_ODD
+
+DONE:
+    load root
+    write
+    stop
+
